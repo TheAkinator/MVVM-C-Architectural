@@ -9,6 +9,7 @@ import RxCocoa
 import RxSwift
 import UIKit
 
+// swiftlint:disable array_init
 final class BindableLabel: UILabel {
     let disposeBag = DisposeBag()
 

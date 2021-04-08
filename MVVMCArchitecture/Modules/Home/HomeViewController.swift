@@ -9,7 +9,6 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-
 final class HomeViewController: BaseViewController {
     private var viewModel: HomeViewModel
     private let disposeBag = DisposeBag()
