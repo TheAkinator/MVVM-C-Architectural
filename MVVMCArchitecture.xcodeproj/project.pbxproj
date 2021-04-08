@@ -22,6 +22,8 @@
 		F4AA1ECB261F735E00E2448D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AA1ECA261F735E00E2448D /* DetailViewController.swift */; };
 		F4AA1ED0261F736B00E2448D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AA1ECF261F736B00E2448D /* HomeViewModel.swift */; };
 		F4AA1ED5261F737700E2448D /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AA1ED4261F737700E2448D /* DetailViewModel.swift */; };
+		F4AA1EEE261F95E600E2448D /* BindableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AA1EED261F95E600E2448D /* BindableLabel.swift */; };
+		F4AA1EF6261FAA7600E2448D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AA1EF5261FAA7600E2448D /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		F4AA1ECA261F735E00E2448D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F4AA1ECF261F736B00E2448D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F4AA1ED4261F737700E2448D /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		F4AA1EED261F95E600E2448D /* BindableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableLabel.swift; sourceTree = "<group>"; };
+		F4AA1EF5261FAA7600E2448D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F7128C2975EBB6BB073F400A /* Pods_MVVMCArchitecture_MVVMCArchitectureUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMCArchitecture_MVVMCArchitectureUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -173,6 +177,7 @@
 		F437B73B261B3CE300C0F583 /* MVVMCArchitecture */ = {
 			isa = PBXGroup;
 			children = (
+				F4AA1EEC261F95D400E2448D /* Custom Views */,
 				F4AA1E95261F675800E2448D /* Common */,
 				F40C5A58261F66BC00931503 /* Extensions */,
 				F40C5A57261F66B100931503 /* Modules */,
@@ -206,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				F4AA1E96261F677100E2448D /* Coordinator.swift */,
+				F4AA1EF5261FAA7600E2448D /* BaseViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -218,6 +224,14 @@
 				F4AA1ECA261F735E00E2448D /* DetailViewController.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		F4AA1EEC261F95D400E2448D /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				F4AA1EED261F95E600E2448D /* BindableLabel.swift */,
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -479,6 +493,8 @@
 				F4AA1E9F261F67D900E2448D /* HomeCoordinator.swift in Sources */,
 				F4AA1ED0261F736B00E2448D /* HomeViewModel.swift in Sources */,
 				F437B73D261B3CE300C0F583 /* AppDelegate.swift in Sources */,
+				F4AA1EEE261F95E600E2448D /* BindableLabel.swift in Sources */,
+				F4AA1EF6261FAA7600E2448D /* BaseViewController.swift in Sources */,
 				F4AA1ECB261F735E00E2448D /* DetailViewController.swift in Sources */,
 				F4AA1EC3261F734C00E2448D /* DetailCoordinator.swift in Sources */,
 				F4AA1E97261F677100E2448D /* Coordinator.swift in Sources */,

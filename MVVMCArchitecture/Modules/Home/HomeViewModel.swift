@@ -6,15 +6,19 @@
 //
 
 import Foundation
+import RxSwift
 
 final class HomeViewModel {
     weak var coordinator: HomeCoordinator?
+
+    var dateString = PublishSubject<String>()
 
     init(coordinator: HomeCoordinator) {
         self.coordinator = coordinator
     }
 
     func didTapDetail() {
-        coordinator?.navigateToDetail()
+        dateString.on(.next("\(Date())"))
+//        coordinator?.navigateToDetail()
     }
 }
