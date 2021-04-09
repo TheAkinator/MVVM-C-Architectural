@@ -63,6 +63,8 @@ opt_in_rules:
   - vertical_whitespace_opening_braces
   - yoda_condition
 
+trailing_closure:
+  only_single_muted_parameter: true
 force_cast:
   severity: error
 force_try:
