@@ -9,13 +9,18 @@ import Foundation
 import RxSwift
 
 final class HomeViewModel {
+    private let githubAPI: GitHubAPIServicesProtocol
     weak var coordinator: HomeCoordinator?
 
     var dateString = BehaviorSubject<String>(value: "")
-    let accounts = BehaviorSubject<[Account]>(value: [])
+    let accounts = BehaviorSubject<[User]>(value: [])
 
-    init(coordinator: HomeCoordinator) {
+    init(
+        coordinator: HomeCoordinator,
+        githubAPI: GitHubAPIServicesProtocol = GitHubAPIServices()
+    ) {
         self.coordinator = coordinator
+        self.githubAPI = githubAPI
     }
 
     func didTapCell(for indexPath: IndexPath) {
@@ -25,15 +30,14 @@ final class HomeViewModel {
     }
 
     func fetchAccountsList() {
-        let accountsArray = [
-            Account(userName: "John", numberOfRepos: 1),
-            Account(userName: "Take", numberOfRepos: 4),
-            Account(userName: "Miles", numberOfRepos: 9),
-            Account(userName: "Beth", numberOfRepos: 90),
-            Account(userName: "Mike", numberOfRepos: 33)
-        ]
-
-        accounts.onNext(accountsArray)
-        accounts.onCompleted()
+        githubAPI.getUsers(since: 0) { result in
+            switch result {
+            case .success(let users):
+                self.accounts.onNext(users)
+                self.accounts.onCompleted()
+            case .failure(let error):
+                self.accounts.onError(error)
+            }
+        }
     }
 }

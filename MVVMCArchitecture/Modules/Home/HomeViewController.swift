@@ -59,7 +59,7 @@ final class HomeViewController: BaseViewController {
         viewModel.accounts.bind(
             to: tableView.rx.items(cellIdentifier: identifier, cellType: AccountCell.self)
         ) { _, item, cell in
-            cell.setupAccount(item)
+            cell.setupUser(item)
         }
         .disposed(by: disposeBag)
 

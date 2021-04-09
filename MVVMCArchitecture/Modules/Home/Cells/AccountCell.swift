@@ -20,8 +20,8 @@ final class AccountCell: BaseUITableViewCell {
         setupViews()
     }
 
-    func setupAccount(_ account: Account) {
-        nameLabel.text = account.userName
+    func setupUser(_ user: User) {
+        nameLabel.text = user.login
     }
 
     private func setupViews() {
@@ -29,8 +29,8 @@ final class AccountCell: BaseUITableViewCell {
 
         nameLabel.snp.makeConstraints { make in
             make.top.equalTo(self)
-            make.leading.equalTo(self)
-            make.trailing.equalTo(self)
+            make.leading.equalTo(self).offset(16)
+            make.trailing.equalTo(self).offset(16)
             make.bottom.equalTo(self)
             make.height.equalTo(60).priority(.high)
         }
