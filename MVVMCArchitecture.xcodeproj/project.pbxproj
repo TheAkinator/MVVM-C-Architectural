@@ -26,13 +26,15 @@
 		F4AA1EF6261FAA7600E2448D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AA1EF5261FAA7600E2448D /* BaseViewController.swift */; };
 		F4AA1EFC261FACDE00E2448D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AA1EFB261FACDE00E2448D /* User.swift */; };
 		F4AA1F04261FAE1F00E2448D /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AA1F03261FAE1F00E2448D /* UITableView+Ext.swift */; };
-		F4AA1F11261FD3DA00E2448D /* AccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AA1F10261FD3DA00E2448D /* AccountCell.swift */; };
+		F4AA1F11261FD3DA00E2448D /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AA1F10261FD3DA00E2448D /* UserCell.swift */; };
 		F4AA1F21261FE04200E2448D /* BaseUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AA1F20261FE04200E2448D /* BaseUITableViewCell.swift */; };
 		F4AA1F2926207BA600E2448D /* GitHubAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AA1F2826207BA600E2448D /* GitHubAPIRouter.swift */; };
 		F4AA1F3126207C6100E2448D /* GitHubAPIParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AA1F3026207C6100E2448D /* GitHubAPIParameter.swift */; };
 		F4AA1F36262080DB00E2448D /* GitHubAPIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AA1F35262080DB00E2448D /* GitHubAPIServices.swift */; };
-		F4AA1F3B2620840000E2448D /* GitHubAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AA1F3A2620840000E2448D /* GitHubAPIError.swift */; };
+		F4AA1F3B2620840000E2448D /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AA1F3A2620840000E2448D /* RequestError.swift */; };
 		F4AA1F40262084D900E2448D /* URLResponse+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AA1F3F262084D900E2448D /* URLResponse+Ext.swift */; };
+		F4AA1FDE2621E93100E2448D /* UserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AA1FDD2621E93100E2448D /* UserCellViewModel.swift */; };
+		F4AA1FE62621EF8300E2448D /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AA1FE52621EF8300E2448D /* ImageFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,13 +85,15 @@
 		F4AA1EF5261FAA7600E2448D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F4AA1EFB261FACDE00E2448D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F4AA1F03261FAE1F00E2448D /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
-		F4AA1F10261FD3DA00E2448D /* AccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
+		F4AA1F10261FD3DA00E2448D /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		F4AA1F20261FE04200E2448D /* BaseUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUITableViewCell.swift; sourceTree = "<group>"; };
 		F4AA1F2826207BA600E2448D /* GitHubAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPIRouter.swift; sourceTree = "<group>"; };
 		F4AA1F3026207C6100E2448D /* GitHubAPIParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPIParameter.swift; sourceTree = "<group>"; };
 		F4AA1F35262080DB00E2448D /* GitHubAPIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPIServices.swift; sourceTree = "<group>"; };
-		F4AA1F3A2620840000E2448D /* GitHubAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPIError.swift; sourceTree = "<group>"; };
+		F4AA1F3A2620840000E2448D /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		F4AA1F3F262084D900E2448D /* URLResponse+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLResponse+Ext.swift"; sourceTree = "<group>"; };
+		F4AA1FDD2621E93100E2448D /* UserCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViewModel.swift; sourceTree = "<group>"; };
+		F4AA1FE52621EF8300E2448D /* ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
 		F7128C2975EBB6BB073F400A /* Pods_MVVMCArchitecture_MVVMCArchitectureUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMCArchitecture_MVVMCArchitectureUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -269,7 +273,8 @@
 		F4AA1F0F261FD3C700E2448D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				F4AA1F10261FD3DA00E2448D /* AccountCell.swift */,
+				F4AA1F10261FD3DA00E2448D /* UserCell.swift */,
+				F4AA1FDD2621E93100E2448D /* UserCellViewModel.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -278,6 +283,8 @@
 			isa = PBXGroup;
 			children = (
 				F4AA1F4726208A5E00E2448D /* GitHubAPI */,
+				F4AA1FE52621EF8300E2448D /* ImageFetcher.swift */,
+				F4AA1F3A2620840000E2448D /* RequestError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -288,7 +295,6 @@
 				F4AA1F2826207BA600E2448D /* GitHubAPIRouter.swift */,
 				F4AA1F3026207C6100E2448D /* GitHubAPIParameter.swift */,
 				F4AA1F35262080DB00E2448D /* GitHubAPIServices.swift */,
-				F4AA1F3A2620840000E2448D /* GitHubAPIError.swift */,
 			);
 			path = GitHubAPI;
 			sourceTree = "<group>";
@@ -549,6 +555,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F437B741261B3CE300C0F583 /* HomeViewController.swift in Sources */,
+				F4AA1FDE2621E93100E2448D /* UserCellViewModel.swift in Sources */,
 				F4AA1F3126207C6100E2448D /* GitHubAPIParameter.swift in Sources */,
 				F4AA1EFC261FACDE00E2448D /* User.swift in Sources */,
 				F4AA1E9F261F67D900E2448D /* HomeCoordinator.swift in Sources */,
@@ -563,9 +570,10 @@
 				F4AA1EC3261F734C00E2448D /* DetailCoordinator.swift in Sources */,
 				F4AA1F04261FAE1F00E2448D /* UITableView+Ext.swift in Sources */,
 				F4AA1F21261FE04200E2448D /* BaseUITableViewCell.swift in Sources */,
-				F4AA1F11261FD3DA00E2448D /* AccountCell.swift in Sources */,
+				F4AA1F11261FD3DA00E2448D /* UserCell.swift in Sources */,
 				F4AA1E97261F677100E2448D /* Coordinator.swift in Sources */,
-				F4AA1F3B2620840000E2448D /* GitHubAPIError.swift in Sources */,
+				F4AA1FE62621EF8300E2448D /* ImageFetcher.swift in Sources */,
+				F4AA1F3B2620840000E2448D /* RequestError.swift in Sources */,
 				F4AA1ED5261F737700E2448D /* DetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

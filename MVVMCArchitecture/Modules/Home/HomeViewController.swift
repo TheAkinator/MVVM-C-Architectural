@@ -28,7 +28,7 @@ final class HomeViewController: BaseViewController {
             tableView = UITableView(frame: .zero, style: .grouped)
         }
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.register(AccountCell.self)
+        tableView.register(UserCell.self)
         return tableView
     }()
 
@@ -55,11 +55,11 @@ final class HomeViewController: BaseViewController {
     }
 
     private func setupBinds() {
-        let identifier = String(describing: AccountCell.self)
-        viewModel.accounts.bind(
-            to: tableView.rx.items(cellIdentifier: identifier, cellType: AccountCell.self)
+        let identifier = String(describing: UserCell.self)
+        viewModel.users.bind(
+            to: tableView.rx.items(cellIdentifier: identifier, cellType: UserCell.self)
         ) { _, item, cell in
-            cell.setupUser(item)
+            cell.viewModel = self.viewModel.viewModelFor(user: item)
         }
         .disposed(by: disposeBag)
 

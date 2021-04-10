@@ -8,8 +8,8 @@
 import Foundation
 
 protocol GitHubAPIServicesProtocol {
-    func getUsers(since: Int, completion: @escaping (Result<[User], Error>) -> Void)
-    func getUsers(since: Int, pageSize: Int, completion: @escaping (Result<[User], Error>) -> Void)
+    func getUsers(since: Int, completion: @escaping (Result<[User], RequestError>) -> Void)
+    func getUsers(since: Int, pageSize: Int, completion: @escaping (Result<[User], RequestError>) -> Void)
 }
 
 class GitHubAPIServices: GitHubAPIServicesProtocol {
@@ -19,7 +19,7 @@ class GitHubAPIServices: GitHubAPIServicesProtocol {
         self.urlSession = urlSession
     }
 
-    func getUsers(since: Int, completion: @escaping (Result<[User], Error>) -> Void) {
+    func getUsers(since: Int, completion: @escaping (Result<[User], RequestError>) -> Void) {
         let route = GitHubAPIRoutes.users([.since(since), .perPage(10)])
 
         request(to: route, parserType: [User].self) { result in
@@ -27,7 +27,7 @@ class GitHubAPIServices: GitHubAPIServicesProtocol {
         }
     }
 
-    func getUsers(since: Int, pageSize: Int, completion: @escaping (Result<[User], Error>) -> Void) {
+    func getUsers(since: Int, pageSize: Int, completion: @escaping (Result<[User], RequestError>) -> Void) {
         let route = GitHubAPIRoutes.users([.since(since), .perPage(pageSize)])
 
         request(to: route, parserType: [User].self) { result in
@@ -35,9 +35,9 @@ class GitHubAPIServices: GitHubAPIServicesProtocol {
         }
     }
 
-    private func request<Data: Codable>(to route: GitHubAPIRoutes, parserType: Data.Type, completion: @escaping (Result<Data, Error>) -> Void) {
+    private func request<Data: Codable>(to route: GitHubAPIRoutes, parserType: Data.Type, completion: @escaping (Result<Data, RequestError>) -> Void) {
         guard let url = route.url else {
-            completion(.failure(GitHubAPIError.badURL))
+            completion(.failure(.badURL))
             return
         }
 
@@ -47,21 +47,21 @@ class GitHubAPIServices: GitHubAPIServicesProtocol {
         let task = urlSession.dataTask(with: urlRequest) { data, response, error in
             if let error = error {
                 DispatchQueue.main.async {
-                    completion(.failure(error))
+                    completion(.failure(.underlying(error)))
                 }
                 return
             }
 
-            guard let isSuccessResponse = response?.isSuccessResponse, isSuccessResponse else {
+            if let response = response as? HTTPURLResponse, !response.isSuccessResponse {
                 DispatchQueue.main.async {
-                    completion(.failure(GitHubAPIError.badResponse))
+                    completion(.failure(.requestFailed(response.statusCode)))
                 }
                 return
             }
 
             guard let data = data else {
                 DispatchQueue.main.async {
-                    completion(.failure(GitHubAPIError.noData))
+                    completion(.failure(.emptyResponse))
                 }
                 return
             }
@@ -73,7 +73,7 @@ class GitHubAPIServices: GitHubAPIServicesProtocol {
                 }
             } catch {
                 DispatchQueue.main.async {
-                    completion(.failure(error))
+                    completion(.failure(.underlying(error)))
                 }
             }
         }

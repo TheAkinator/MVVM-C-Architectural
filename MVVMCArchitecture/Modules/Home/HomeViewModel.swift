@@ -13,7 +13,7 @@ final class HomeViewModel {
     weak var coordinator: HomeCoordinator?
 
     var dateString = BehaviorSubject<String>(value: "")
-    let accounts = BehaviorSubject<[User]>(value: [])
+    let users = BehaviorSubject<[User]>(value: [])
 
     init(
         coordinator: HomeCoordinator,
@@ -33,11 +33,15 @@ final class HomeViewModel {
         githubAPI.getUsers(since: 0) { result in
             switch result {
             case .success(let users):
-                self.accounts.onNext(users)
-                self.accounts.onCompleted()
+                self.users.onNext(users)
+                self.users.onCompleted()
             case .failure(let error):
-                self.accounts.onError(error)
+                self.users.onError(error)
             }
         }
+    }
+
+    func viewModelFor(user: User) -> UserCellViewModel {
+        UserCellViewModel(user: user)
     }
 }

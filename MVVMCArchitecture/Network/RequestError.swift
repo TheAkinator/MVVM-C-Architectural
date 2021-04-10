@@ -7,8 +7,9 @@
 
 import Foundation
 
-enum GitHubAPIError: Error {
+enum RequestError: Error {
     case badURL
-    case badResponse
-    case noData
+    case requestFailed(Int)
+    case underlying(Error)
+    case emptyResponse
 }
